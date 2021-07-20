@@ -20,9 +20,13 @@
 
     </head>
     <body>
+        
         <div id="booking" class="section">
+            
             <div class="section-center">
                 <div class="container">
+                    <h1>New Check In</h1>
+                    
                     <div class="row">
                         <div class="booking-form">
                             <form>
@@ -62,6 +66,20 @@
                                         <option>Multiple Room (1, 2, 3, 4 People  or more)</option>
                                     </select>
                                     <span class="select-arrow"></span>
+                                </div>
+                                <div class="row no-margin">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">First Name</span>
+                                            <input class="form-control" type="firstname" placeholder="Enter your First Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">Last Name</span>
+                                            <input class="form-control" type="lastname" placeholder="Enter your Last Name">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Email</span>
