@@ -1,11 +1,9 @@
-
 package Logic;
 
 import java.util.Date;
 
-
 public class Guest {
-    
+
     private int dni;
     private String firstName;
     private String lastName;
@@ -72,6 +70,5 @@ public class Guest {
     public void setProfession(String profession) {
         this.profession = profession;
     }
-    
-    
+
 }
