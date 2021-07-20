@@ -1,5 +1,5 @@
 
-package Persistence;
+package Logic;
 
 
 public class Room {
