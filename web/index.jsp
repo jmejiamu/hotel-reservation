@@ -81,13 +81,27 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="form-group">
-                                    <span class="form-label">Email</span>
-                                    <input class="form-control" type="email" placeholder="Enter your email">
+                                <div class="row no-margin">
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">DOB</span>
+                                            <input class="form-control" type="date" required>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                            <span class="form-label">DNI</span>
+                                            <input class="form-control" type="dni" placeholder="Enter your DNI">
+                                        </div>
+                                    </div>
                                 </div>
                                 <div class="form-group">
-                                    <span class="form-label">Phone</span>
-                                    <input class="form-control" type="tel" placeholder="Enter your phone number">
+                                    <span class="form-label">Profession</span>
+                                    <input class="form-control" type="Profession" placeholder="Enter your profession">
+                                </div>
+                                <div class="form-group">
+                                    <span class="form-label">Address</span>
+                                    <input class="form-control" type="Address" placeholder="Enter your address">
                                 </div>
                                 <div class="form-btn">
                                     <button class="submit-btn">Book Now</button>
