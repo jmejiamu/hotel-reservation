@@ -16,7 +16,7 @@ public class SvCheckIn extends HttpServlet {
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
+        
         
     }
 
@@ -32,6 +32,9 @@ public class SvCheckIn extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
+        String checkIn =  request.getParameter("checkin");
+        
+        System.out.println("Check in" + checkIn);
     }
 
     @Override

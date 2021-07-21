@@ -29,12 +29,12 @@
                     
                     <div class="row">
                         <div class="booking-form">
-                            <form>
+                            <form action="SvCheckIn" method="POST">
                                 <div class="row no-margin">
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">Check In</span>
-                                            <input class="form-control" type="date" required>
+                                            <input class="form-control" type="date" name="checkin" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
