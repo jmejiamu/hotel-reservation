@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
+
 @WebServlet(name = "SvCheckIn", urlPatterns = {"/SvCheckIn"})
 public class SvCheckIn extends HttpServlet {
 
@@ -33,7 +34,7 @@ public class SvCheckIn extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
         String checkIn =  request.getParameter("checkin");
         String checkOut = request.getParameter("checkout");
         String numOfPeople = request.getParameter("numpeople");
@@ -46,8 +47,8 @@ public class SvCheckIn extends HttpServlet {
         String address = request.getParameter("address");
         
         Controller controller = new Controller();
-        
-        controller.createNewReservation(new Date(checkIn), new Date(checkOut), true, 0, Integer.parseInt (numOfPeople), typeOfRoom, firstName, lastName, new Date(dob), dni, profession, address);
+        //TODO - Fix date bug Check In and Check out and DOB
+        controller.createNewReservation(new Date("07/13/2021"), new Date("07/31/2021"), true, 0, Integer.parseInt (numOfPeople), typeOfRoom, firstName, lastName, new Date("04/06/1991"), dni, profession, address);
     }
 
     @Override

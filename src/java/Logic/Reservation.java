@@ -8,6 +8,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 @Entity
 public class Reservation implements Serializable{
@@ -16,7 +18,10 @@ public class Reservation implements Serializable{
      private int id;
     
     @Basic
+    @Temporal(TemporalType.DATE)
      private Date checkIn; //
+    
+    @Temporal(TemporalType.DATE)
      private Date checkOut; //
      private boolean aviable;
      private double cost;
@@ -24,6 +29,7 @@ public class Reservation implements Serializable{
      private String typeOfRoom; //Single, double, triple ..
      private String firstName;
      private String lastName;
+    @Temporal(TemporalType.DATE)
      private Date dob;
      private String dni;
      private String profession;
