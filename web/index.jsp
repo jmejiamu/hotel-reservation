@@ -40,13 +40,13 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">Check Out</span>
-                                            <input class="form-control" type="date" required>
+                                            <input class="form-control" type="date" name="checkout" required>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Number of People</span>
-                                    <select class="form-control" required>
+                                    <select class="form-control" name="numpeople" required>
                                         <option value="" selected hidden>Select room type</option>
                                         <option>-</option>
                                         <option>1</option>
@@ -58,7 +58,7 @@
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Room Type</span>
-                                    <select class="form-control" required>
+                                    <select class="form-control" name="roomtype" required>
                                         <option value="" selected hidden>Select room type</option>
                                         <option>Single Room (1 Person)</option>
                                         <option>Double Room (2 People Max.)</option>
@@ -71,13 +71,13 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">First Name</span>
-                                            <input class="form-control" type="firstname" placeholder="Enter your First Name">
+                                            <input class="form-control" type="text" name="firstname" placeholder="Enter your First Name">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">Last Name</span>
-                                            <input class="form-control" type="lastname" placeholder="Enter your Last Name">
+                                            <input class="form-control" type="text" name="lastname" placeholder="Enter your Last Name">
                                         </div>
                                     </div>
                                 </div>
@@ -85,23 +85,23 @@
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">DOB</span>
-                                            <input class="form-control" type="date" required>
+                                            <input class="form-control" type="date" name="dob" required>
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                             <span class="form-label">DNI</span>
-                                            <input class="form-control" type="dni" placeholder="Enter your DNI">
+                                            <input class="form-control" type="text" name="dni" placeholder="Enter your DNI">
                                         </div>
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Profession</span>
-                                    <input class="form-control" type="Profession" placeholder="Enter your profession">
+                                    <input class="form-control" type="text" name="profession" placeholder="Enter your profession">
                                 </div>
                                 <div class="form-group">
                                     <span class="form-label">Address</span>
-                                    <input class="form-control" type="Address" placeholder="Enter your address">
+                                    <input class="form-control" type="text" name="address" placeholder="Enter your address">
                                 </div>
                                 <div class="form-btn">
                                     <button class="submit-btn">Book Now</button>

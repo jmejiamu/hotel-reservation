@@ -28,4 +28,8 @@ public class Controller {
         
         persistanceController.createReservation(reservation);
     }
+
+//    public void createNewReservation(String checkIn, String checkOut, boolean b, int i, int i0, String typeOfRoom, String firstName, String lastName, String dob, String dni, String profession, String address) {
+//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+//    }
 }
