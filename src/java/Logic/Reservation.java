@@ -1,11 +1,21 @@
 
 package Logic;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
-
-public class Reservation{
+@Entity
+public class Reservation implements Serializable{
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
      private int id;
+    
+    @Basic
      private Date checkIn; //
      private Date checkOut; //
      private boolean aviable;
