@@ -1,4 +1,3 @@
-
 package Servlet;
 
 import Logic.Controller;
@@ -16,42 +15,36 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
-
 @WebServlet(name = "SvCheckIn", urlPatterns = {"/SvCheckIn"})
 public class SvCheckIn extends HttpServlet {
 
-    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        
+
     }
 
-    
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
-        String checkIn =  request.getParameter("checkin");
+
+        String checkIn = request.getParameter("checkin");
         String checkOut = request.getParameter("checkout");
         String numOfPeople = request.getParameter("numpeople");
-        String typeOfRoom  = request.getParameter("roomtype");
+        String typeOfRoom = request.getParameter("roomtype");
         String firstName = request.getParameter("firstname");
         String lastName = request.getParameter("lastname");
-        String dob =  request.getParameter("dob");
+        String dob = request.getParameter("dob");
         String dni = request.getParameter("dni");
         String profession = request.getParameter("profession");
         String address = request.getParameter("address");
-        
-        DateFormat date =  new SimpleDateFormat("yyyy-MM-dd");
+
+        DateFormat date = new SimpleDateFormat("yyyy-MM-dd");
         Date checkInFormat;
         Date checkOutFormat;
         Date dobFormat;
@@ -59,17 +52,17 @@ public class SvCheckIn extends HttpServlet {
             checkInFormat = date.parse(checkIn.toString());
             checkOutFormat = date.parse(checkOut.toString());
             dobFormat = date.parse(dob.toString());
-            
-            
-                    Controller controller = new Controller();
-        //TODO - Fix date bug Check In and Check out and DOB
-        controller.createNewReservation(checkInFormat, checkOutFormat, true, 0, Integer.parseInt (numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
+            //This calculate the number of day the guest will stay in the room
+            int days = (int) Math.round((checkInFormat.getTime() - checkOutFormat.getTime())/(double) 86400000) * -1;
+            System.out.println("Days = " + days);
+
+            Controller controller = new Controller();
+            //TODO - Fix date bug Check In and Check out and DOB
+            controller.createNewReservation(checkInFormat, checkOutFormat, true, 0, Integer.parseInt(numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
 
         } catch (ParseException ex) {
             Logger.getLogger(SvCheckIn.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-          
 
     }
 
