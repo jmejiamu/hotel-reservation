@@ -4,7 +4,12 @@ package Servlet;
 import Logic.Controller;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -46,9 +51,26 @@ public class SvCheckIn extends HttpServlet {
         String profession = request.getParameter("profession");
         String address = request.getParameter("address");
         
-        Controller controller = new Controller();
+        DateFormat date =  new SimpleDateFormat("yyyy-MM-dd");
+        Date checkInFormat;
+        Date checkOutFormat;
+        Date dobFormat;
+        try {
+            checkInFormat = date.parse(checkIn.toString());
+            checkOutFormat = date.parse(checkOut.toString());
+            dobFormat = date.parse(dob.toString());
+            
+            
+                    Controller controller = new Controller();
         //TODO - Fix date bug Check In and Check out and DOB
-        controller.createNewReservation(new Date("07/13/2021"), new Date("07/31/2021"), true, 0, Integer.parseInt (numOfPeople), typeOfRoom, firstName, lastName, new Date("04/06/1991"), dni, profession, address);
+        controller.createNewReservation(checkInFormat, checkOutFormat, true, 0, Integer.parseInt (numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
+
+        } catch (ParseException ex) {
+            Logger.getLogger(SvCheckIn.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+          
+
     }
 
     @Override

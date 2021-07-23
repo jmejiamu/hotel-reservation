@@ -4,12 +4,10 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Servlet/SvCheckIn.java</file>
-            <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Persistence/PersistanceController.java</file>
             <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Logic/Reservation.java</file>
-            <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Logic/Guest.java</file>
+            <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Logic/Controller.java</file>
             <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/web/index.jsp</file>
             <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/java/Logic/Room.java</file>
-            <file>file:/C:/Users/joch_/OneDrive/Documents/NetBeansProjects/Mejia_Jose_tpo3/src/conf/persistence.xml</file>
         </group>
     </open-files>
 </project-private>
