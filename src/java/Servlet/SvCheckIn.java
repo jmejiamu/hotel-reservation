@@ -52,13 +52,19 @@ public class SvCheckIn extends HttpServlet {
             checkInFormat = date.parse(checkIn.toString());
             checkOutFormat = date.parse(checkOut.toString());
             dobFormat = date.parse(dob.toString());
+
             //This calculate the number of day the guest will stay in the room
-            int days = (int) Math.round((checkInFormat.getTime() - checkOutFormat.getTime())/(double) 86400000) * -1;
+            int days = (int) Math.round((checkInFormat.getTime() - checkOutFormat.getTime()) / (double) 86400000) * -1;
             System.out.println("Days = " + days);
+            
+            //Cost per night $300 
+            int costPerNight = 300 * days;
+            
+            
 
             Controller controller = new Controller();
-            //TODO - Fix date bug Check In and Check out and DOB
-            controller.createNewReservation(checkInFormat, checkOutFormat, true, 0, Integer.parseInt(numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
+
+            controller.createNewReservation(checkInFormat, checkOutFormat, true, costPerNight, Integer.parseInt(numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
 
         } catch (ParseException ex) {
             Logger.getLogger(SvCheckIn.class.getName()).log(Level.SEVERE, null, ex);
