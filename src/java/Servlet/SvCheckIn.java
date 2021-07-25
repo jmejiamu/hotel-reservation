@@ -59,9 +59,8 @@ public class SvCheckIn extends HttpServlet {
             
             //Cost per night $300 
             int costPerNight = 300 * days;
-            
-            
 
+            //Connect to the logic layer
             Controller controller = new Controller();
 
             controller.createNewReservation(checkInFormat, checkOutFormat, true, costPerNight, Integer.parseInt(numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
