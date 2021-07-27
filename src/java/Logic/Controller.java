@@ -9,8 +9,14 @@ public class Controller {
     
     public void createNewReservation(Date checkIn, Date checkOut,
             boolean aviable, double cost, int numOfPeople,
-            String typeOfRoom, String firstName, String lastName,
-            Date dob, String dni, String profession, String address) {
+            String typeOfRoom
+//            String firstName, 
+//            String lastName,
+//            Date dob, 
+//            String dni, 
+//            String profession, 
+//            String address
+    ) {
         
         Reservation reservation = new Reservation();
         reservation.setCheckIn(checkIn);
@@ -19,17 +25,27 @@ public class Controller {
         reservation.setCost(cost);
         reservation.setNumOfPeople(numOfPeople);
         reservation.setTypeOfRoom(typeOfRoom);
-        reservation.setFirstName(firstName);
-        reservation.setLastName(lastName);
-        reservation.setDob(dob);
-        reservation.setDni(dni);
-        reservation.setProfession(profession);
-        reservation.setAddress(address);
+//        reservation.setFirstName(firstName);
+//        reservation.setLastName(lastName);
+//        reservation.setDob(dob);
+//        reservation.setDni(dni);
+//        reservation.setProfession(profession);
+//        reservation.setAddress(address);
         
         persistanceController.createReservation(reservation);
     }
 
-//    public void createNewReservation(String checkIn, String checkOut, boolean b, int i, int i0, String typeOfRoom, String firstName, String lastName, String dob, String dni, String profession, String address) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
+    public void createNewGuest(String dni, String firstName, String lastName, Date DOB, String address, String profession){
+        Guest guest = new Guest();
+        
+        guest.setDni(dni);
+        guest.setFirstName(firstName);
+        guest.setLastName(lastName);
+        guest.setDOB(DOB);
+        guest.setAddress(address);
+        guest.setProfession(profession);
+        
+        persistanceController.createGuest(guest);
+    }
+
 }

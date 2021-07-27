@@ -1,12 +1,27 @@
 package Logic;
 
+import java.io.Serializable;
 import java.util.Date;
+import javax.persistence.Basic;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
-public class Guest {
+@Entity
+public class Guest implements Serializable {
 
-    private int dni;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+    
+    @Basic
+    private String dni;
     private String firstName;
     private String lastName;
+    @Temporal(TemporalType.DATE)
     private Date DOB; // Day of birth
     private String address;
     private String profession;
@@ -14,7 +29,8 @@ public class Guest {
     public Guest() {
     }
 
-    public Guest(int dni, String firstName, String lastName, Date DOB, String address, String profession) {
+    public Guest(int id,String dni, String firstName, String lastName, Date DOB, String address, String profession) {
+        this.id = id;
         this.dni = dni;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,11 +39,20 @@ public class Guest {
         this.profession = profession;
     }
 
-    public int getDni() {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
+
+    public String getDni() {
         return dni;
     }
 
-    public void setDni(int dni) {
+    public void setDni(String dni) {
         this.dni = dni;
     }
 

@@ -63,7 +63,10 @@ public class SvCheckIn extends HttpServlet {
             //Connect to the logic layer
             Controller controller = new Controller();
 
-            controller.createNewReservation(checkInFormat, checkOutFormat, true, costPerNight, Integer.parseInt(numOfPeople), typeOfRoom, firstName, lastName, dobFormat, dni, profession, address);
+            controller.createNewReservation(checkInFormat, checkOutFormat, true, costPerNight, Integer.parseInt(numOfPeople), typeOfRoom 
+//                    firstName, lastName, dobFormat, dni, profession, address
+            );
+            controller.createNewGuest(dni, firstName, lastName, dobFormat, address, profession);
 
         } catch (ParseException ex) {
             Logger.getLogger(SvCheckIn.class.getName()).log(Level.SEVERE, null, ex);
