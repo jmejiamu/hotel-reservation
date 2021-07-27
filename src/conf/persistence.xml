@@ -3,6 +3,7 @@
   <persistence-unit name="Mejia_Jose_tpo3PU" transaction-type="RESOURCE_LOCAL">
     <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
     <class>Logic.Reservation</class>
+    <class>Logic.Guest</class>
     <exclude-unlisted-classes>false</exclude-unlisted-classes>
     <properties>
       <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/reservation?serverTimezone=UTC"/>

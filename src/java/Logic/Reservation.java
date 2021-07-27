@@ -1,14 +1,15 @@
-
 package Logic;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.MapsId;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -16,24 +17,25 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Reservation implements Serializable{
+public class Reservation implements Serializable {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-     private int id;
-    
+    private int id;
+
     @Basic
     @Temporal(TemporalType.DATE)
-     private Date checkIn; //
-    
+    private Date checkIn; //
+
     @Temporal(TemporalType.DATE)
-     private Date checkOut; //
-     private boolean aviable;
-     private double cost;
-     private int numOfPeople;//
-     private String typeOfRoom; //Single, double, triple ..
-     
-     @OneToOne
-     Guest guest;
+    private Date checkOut; //
+    private boolean aviable;
+    private double cost;
+    private int numOfPeople;//
+    private String typeOfRoom; //Single, double, triple ..
+
+    @OneToOne(cascade= CascadeType.ALL) 
+    private Guest guest;
 //     private String firstName;
 //     private String lastName;
 //    @Temporal(TemporalType.DATE)
@@ -45,17 +47,17 @@ public class Reservation implements Serializable{
     public Reservation() {
     }
 
-    public Reservation(int id, Date checkIn, 
-            Date checkOut, boolean aviable, 
-            double cost, int numOfPeople, 
+    public Reservation(int id, Date checkIn,
+            Date checkOut, boolean aviable,
+            double cost, int numOfPeople,
             String typeOfRoom,
             Guest guest
-//            String firstName, 
-//            String lastName, 
-//            Date dob, 
-//            String dni, 
-//            String profession, 
-//            String address
+    //            String firstName, 
+    //            String lastName, 
+    //            Date dob, 
+    //            String dni, 
+    //            String profession, 
+    //            String address
     ) {
         this.id = id;
         this.checkIn = checkIn;
@@ -80,7 +82,6 @@ public class Reservation implements Serializable{
     public void setGuest(Guest guest) {
         this.guest = guest;
     }
-    
 
     public int getId() {
         return id;
@@ -185,6 +186,4 @@ public class Reservation implements Serializable{
 //    public void setAddress(String address) {
 //        this.address = address;
 //    }
-     
-     
 }
