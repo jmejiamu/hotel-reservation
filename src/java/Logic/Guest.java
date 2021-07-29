@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
@@ -25,6 +26,9 @@ public class Guest implements Serializable {
     private Date DOB; // Day of birth
     private String address;
     private String profession;
+    
+    @OneToOne(mappedBy = "guest")         
+    Reservation reservation;
 
     public Guest() {
     }
@@ -37,6 +41,8 @@ public class Guest implements Serializable {
         this.DOB = DOB;
         this.address = address;
         this.profession = profession;
+        
+        
     }
 
     public int getId() {

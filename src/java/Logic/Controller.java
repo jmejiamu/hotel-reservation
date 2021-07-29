@@ -9,16 +9,6 @@ public class Controller {
     Reservation reservation = new Reservation();
     Guest guest = new Guest();
 
-    public void createNewGuest(String dni, String firstName, String lastName, Date DOB, String address, String profession) {
-        guest.setDni(dni);
-        guest.setFirstName(firstName);
-        guest.setLastName(lastName);
-        guest.setDOB(DOB);
-        guest.setAddress(address);
-        guest.setProfession(profession);
-        persistanceController.createGuest(guest);
-    }
-
     public void createNewReservation(Date checkIn, Date checkOut,
             boolean aviable, double cost, int numOfPeople,
             String typeOfRoom
@@ -42,10 +32,20 @@ public class Controller {
 //        reservation.setDni(dni);
 //        reservation.setProfession(profession);
 //        reservation.setAddress(address);
-//        reservation.setGuest(guest);
+        reservation.setGuest(guest);
 //        System.out.println(">>>" + reservation.getGuest());
 
         persistanceController.createReservation(reservation);
+    }
+
+    public void createNewGuest(String dni, String firstName, String lastName, Date DOB, String address, String profession) {
+        guest.setDni(dni);
+        guest.setFirstName(firstName);
+        guest.setLastName(lastName);
+        guest.setDOB(DOB);
+        guest.setAddress(address);
+        guest.setProfession(profession);
+        persistanceController.createGuest(guest);
     }
 
 }

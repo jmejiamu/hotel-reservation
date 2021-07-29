@@ -35,6 +35,7 @@ public class Reservation implements Serializable {
     private String typeOfRoom; //Single, double, triple ..
 
     @OneToOne(cascade= CascadeType.ALL) 
+    @JoinColumn(name = "guest_id", referencedColumnName = "id")
     private Guest guest;
 //     private String firstName;
 //     private String lastName;
